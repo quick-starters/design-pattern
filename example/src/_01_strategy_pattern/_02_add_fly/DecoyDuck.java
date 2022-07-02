@@ -12,7 +12,7 @@ public class DecoyDuck extends Duck {
     }
 
     @Override
-    void display() {
+    public void display() {
         System.out.println("고무오리의 모습을 띄고 있다.");
     }
 }

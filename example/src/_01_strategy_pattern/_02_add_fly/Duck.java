@@ -10,11 +10,11 @@ public abstract class Duck {
     }
 
     /**
-     * 오리가 날아야한다는 요구사항이 추가되었다.
+     * CHECK: 오리가 날아야한다는 요구사항이 추가되었다.
      */
     protected void fly() {
         System.out.println("오리 날다!");
     }
 
-    abstract void display();
+    public abstract void display();
 }
