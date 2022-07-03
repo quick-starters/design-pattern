@@ -1,6 +1,6 @@
 ![image](https://user-images.githubusercontent.com/10377550/177028440-92463b91-b503-4c1d-aecd-254f24ede5fa.png)
 ## 전략 패턴(Strategy Pattern)
-![image](https://user-images.githubusercontent.com/10377550/177034623-6eab8dc1-1d90-4001-96e5-d75d05a83b3b.png)
+![image](https://user-images.githubusercontent.com/10377550/177034757-dc625a70-f676-4800-b030-8a3c84764369.png)
 
 알고리즘 군을 정의하고 캡슐화해서 각각의 알고리즘군을 수정해서 쓸 수 있게 해줍니다. 전략 패턴을 사용하면 클라이언트로부터 알고리즘을 분리해서 독립적으로 변경할 수 있습니다.
 
