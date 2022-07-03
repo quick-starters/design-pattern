@@ -54,3 +54,9 @@
 
 
 ### 옵저버 패턴
+
+
+
+## 참고
+- 헤드퍼스트 디자인 패턴(2022)
+- [리팩토링 구루](https://refactoring.guru/design-patterns/strategy)
