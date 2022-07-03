@@ -65,6 +65,41 @@
 
 ---
 
+### 자바에서의 전략 패턴
+
+**Comparator**
+
+```java
+List<Integer> numbers = new ArrayList<>();
+numbers.add(1);
+numbers.add(5);
+numbers.add(3);
+
+Collections.sort(numbers, new Comparator<Integer>() {
+  @Override
+  public int compare(Integer o1, Integer o2) {
+    return o1 - 02;
+  }
+});
+System.out.println("numbers = " + numbers);
+```
+
+### 스프링에서의 전략패턴
+
+인터페이스가 쓰인 곳 대부분이 전략 패턴이라고 보면된다.
+
+**ApplicationContext**
+
+```java
+ApplicationContext context1 = new ClassPathXmlApplicationContext();
+ApplicationContext context2 = new FileSystemApplicationContext();
+ApplicationContext context3 = new AnnotationConfigApplicationContext();
+```
+
+빈 설정 파일을 클래스 패스에서 xml 파일을 읽어서, 파일 시스템 경로 기준으로 찾아서, 자바 어노테이션 설정 파일을 사용해서 등등 다양한 전략을 이용해 어플리케이션 컨텍스트를 구성할 수 있다. 그 외에 `BeanDefinitionParser`, `PlatformTransactionManager`, `CacheManager` 등도 전략 패턴을 사용한다.
+
+---
+
 ### 장/단점
 
 #### 장점
