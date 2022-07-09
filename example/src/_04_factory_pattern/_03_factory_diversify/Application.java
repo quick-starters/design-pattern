@@ -1,14 +1,17 @@
 package _04_factory_pattern._03_factory_diversify;
 
+import _04_factory_pattern._03_factory_diversify.pizzafactory.NYPizzaFactory;
+import _04_factory_pattern._03_factory_diversify.pizzafactory.WrongPizzaFactory;
+
 public class Application {
     public static void main(String[] args) {
-        // CHECK : 피자만드는 순서는 같지만, 각각 레시피가 달라질 수 있다.
         NYPizzaFactory nyPizzaFactory = new NYPizzaFactory();
         PizzaStore nyStore = new PizzaStore(nyPizzaFactory);
         nyStore.orderPizza("Veggie");
 
-        ChicagoPizzaFactory chicagoPizzaFactory = new ChicagoPizzaFactory();
-        PizzaStore chicagoStore = new PizzaStore(chicagoPizzaFactory);
-        chicagoStore.orderPizza("Veggie");
+        // CHECK : 피자만드는 순서는 같지만, 피자가 잘못 만들어지는 경우가 생긴다.
+        WrongPizzaFactory wrongPizzaFactory = new WrongPizzaFactory();
+        PizzaStore wrongPizzaStore = new PizzaStore(wrongPizzaFactory);
+        wrongPizzaStore.orderPizza("pepperoni");
     }
 }

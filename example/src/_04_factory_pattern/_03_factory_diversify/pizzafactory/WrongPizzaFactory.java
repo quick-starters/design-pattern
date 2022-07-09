@@ -1,9 +1,9 @@
-package _04_factory_pattern._02_encapsulation;
+package _04_factory_pattern._03_factory_diversify.pizzafactory;
 
-import _04_factory_pattern._02_encapsulation.pizza.*;
+import _04_factory_pattern._03_factory_diversify.pizza.*;
 
-public class SimplePizzaFactory {
-    public Pizza createPizza(String type) {
+public class WrongPizzaFactory implements PizzaFactory {
+    public _04_factory_pattern._03_factory_diversify.pizza.Pizza createPizza(String type) {
         Pizza pizza = null;
 
         if (type.equals("cheese")) {
@@ -11,7 +11,7 @@ public class SimplePizzaFactory {
         } else if (type.equals("greek")) {
             pizza = new GreekPizza();
         } else if (type.equals("pepperoni")) {
-            pizza = new PepperoniPizza();
+            pizza = new WrongPepperoniPizza();
         } else if (type.equals("clam")) {
             pizza = new ClamPizza();
         } else if (type.equals("veggie")) {

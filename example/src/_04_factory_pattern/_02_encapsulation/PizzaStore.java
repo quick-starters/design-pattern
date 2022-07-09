@@ -1,5 +1,7 @@
 package _04_factory_pattern._02_encapsulation;
 
+import _04_factory_pattern._02_encapsulation.pizza.Pizza;
+
 public class PizzaStore {
     SimplePizzaFactory factory;
 
