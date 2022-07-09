@@ -2,7 +2,7 @@
 ## 전략 패턴(Strategy Pattern)
 ![image](https://user-images.githubusercontent.com/10377550/177034757-dc625a70-f676-4800-b030-8a3c84764369.png)
 
-알고리즘 군을 정의하고 캡슐화해서 각각의 알고리즘군을 수정해서 쓸 수 있게 해줍니다. 전략 패턴을 사용하면 클라이언트로부터 알고리즘을 분리해서 독립적으로 변경할 수 있습니다. 새로운 알고리즘이 필요하더라도, 컨텍스트를 수정하지 않고 기능을 추가 할 수 있게 됩니다.
+알고리즘 군을 정의하고 **캡슐화**해서 각각의 **알고리즘군을 수정**해서 쓸 수 있게 해줍니다. 전략 패턴을 사용하면 클라이언트로부터 알고리즘을 분리해서 독립적으로 변경할 수 있습니다. 새로운 알고리즘이 필요하더라도, 컨텍스트를 수정하지 않고 기능을 추가 할 수 있게 됩니다.
 
 ---
 
@@ -41,7 +41,7 @@
 
 ![image-20220702154233940](images/image-20220702154233940.png)
 
-소프트웨어는 아무리 디자인을 잘한다 한들 시간이 지남에 따라 변화하고 성장한다. 이런 소프트웨어를 고칠 때 기존 코드에 미치는 영향을 최소한으로 줄이면서 작업할 수 있는 방법이 있다면 정말 행복할 것이다. 
+소프트웨어는 아무리 디자인을 잘한다 한들 시간이 지남에 따라 **변화**하고 성장한다. 이런 소프트웨어를 고칠 때 기존 코드에 미치는 영향을 최소한으로 줄이면서 작업할 수 있는 방법이 있다면 정말 행복할 것이다. 
 
 3가지 디자인 원칙을 알아보자.
 
@@ -75,7 +75,7 @@ numbers.add(1);
 numbers.add(5);
 numbers.add(3);
 
-Collections.sort(numbers, new Comparator<Integer>() {
+Order.sort(numbers, new Comparator<Integer>() {
   @Override
   public int compare(Integer o1, Integer o2) {
     return o1 - 02;
@@ -111,4 +111,18 @@ ApplicationContext context3 = new AnnotationConfigApplicationContext();
 - 복잡도가 증가한다.
 - 클라이언트 코드가 구체적 전략을 알아야한다.
 
+  ```java
+  Duck duck = new MallardDuck();
+  duck.setFlyBehavior(new FlyNoWay());
+  duck.setFlyBehavior(new FlyRocketPowered());
+  ...
+  ```
+
 ---
+
+### 이야깃거리
+
+- 람다 나오면서 좀더 패턴 쓰기 편해졌다.
+- 코틀린 쓰면 더 활용하기 쉽다.
+- [Enum을 통한 전략 패턴 사용을 많이 한다.](https://duzi077.tistory.com/234)
+
