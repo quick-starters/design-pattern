@@ -9,7 +9,6 @@ public class Application {
         PizzaStore nyStore = new PizzaStore(nyPizzaFactory);
         nyStore.orderPizza("Veggie");
 
-        // CHECK : 피자만드는 순서는 같지만, 피자가 잘못 만들어지는 경우가 생긴다.
         WrongPizzaFactory wrongPizzaFactory = new WrongPizzaFactory();
         PizzaStore wrongPizzaStore = new PizzaStore(wrongPizzaFactory);
         wrongPizzaStore.orderPizza("pepperoni");
