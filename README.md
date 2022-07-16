@@ -49,7 +49,7 @@
 
 ## 패턴
 
-### 전략 패턴
+### [전략 패턴](https://github.com/quick-starters/design-pattern/tree/2b0151f3b1b1773e2ccb31c98019e67b4c4472a7/example/src/_01_strategy_pattern)
 
 전략 패턴은 알고리즘군을 정의하고 캡슐화해서 각각의 알고리즘군을 수정해서 쓸 수 있게 해 줍니다. 전략 패턴을 사용하면 클라이언트로부터 알고리즘을 분리해서 독립적으로 변경할 수 있습니다.
 
