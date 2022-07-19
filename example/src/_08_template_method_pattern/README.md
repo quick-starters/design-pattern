@@ -28,7 +28,7 @@ public class Coffee {
         boilWater();
         brewCoffeeGrinds();
         pourInCup();
-        addSugarAndMik();
+        addSugarAndMilk();
     }
 
     private void boilWater() {
@@ -43,7 +43,7 @@ public class Coffee {
         System.out.println("컵에 따르는 중");
     }
 
-    private void addSugarAndMik() {
+    private void addSugarAndMilk() {
         System.out.println("설탕과 우유를 추가하는 중");
     }
 }
@@ -106,7 +106,7 @@ public abstract class CaffeineBeverage {
 _**CaffeineBeverage.java**_
 
 ```java
-public class Coffee extends CaffeineBeverage{
+public class Coffee extends CaffeineBeverage {
 
     void prepareRecipe() {
         boilWater();
@@ -260,13 +260,13 @@ public abstract class CaffeineBeverageWithHook {
         }
     }
 
-    protected void boilWater() {
+    private void boilWater() {
         System.out.println("물 끓이는 중");
     }
 
     protected abstract void brew();
 
-    protected void pourInCup() {
+    private void pourInCup() {
         System.out.println("컵에 따르는중");
     }
 
@@ -408,3 +408,6 @@ List ducksSubList = ducksList.subList(2, 3);
 ### 단점
 
 - 일부 클라이언트는 알고리즘의 제공된 골격에 의해 제한될 수 있다.
+
+> 🗣 종민 : `JDBCTemplate`이 대표적인 예다. 템플릿 콜백 패턴도 포함되어있다. 참고하시려면 이 [링크](https://velog.io/@heoseungyeon/JdbcTemplatefeat.%ED%85%9C%ED%94%8C%EB%A6%BF-%EC%BD%9C%EB%B0%B1-%ED%8C%A8%ED%84%B4)를 클릭하세요.
+
