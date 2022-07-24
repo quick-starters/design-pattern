@@ -53,7 +53,7 @@ public class GumballMonitor {
     public void report() {
         System.out.println("뽑기 기계 위치: " + machine.getLocation());
         System.out.println("현재 재고: " + machine.getCount());
-        System.out.println("현재 상태: " + machine.getLocation());
+        System.out.println("현재 상태: " + machine.getState());
     }
 }
 ```
@@ -82,8 +82,6 @@ monitor.report();
 
 개발이 끝나자마자 새로운 요구사항이 들어왔다. 뽑기 기계를 원격으로 모니터링 하고 싶다는 것이다. 현재는 모니터 코드가 뽑기 기계랑 같은 JVM에서 돌아가고 있다. `GumballMonitor` 는 그대로 두고 대신 원격 객체의 프록시만 넘기도록 해보자.
 
-
-
 > ![IMG_BF5E486F87EC-1](images/IMG_BF5E486F87EC-1.jpeg)
 >
 > ***프록시 패턴***
@@ -98,7 +96,7 @@ monitor.report();
 
 
 
-CEO가 모니터링을 시작하면 `GumballMonitor`는 우션 뽑기 기계의 원격 객체의 프록시를 가져온다. 그 후 `getState()`, `getCount()`, `getLocation()`을 호출한다.
+CEO가 모니터링을 시작하면 `GumballMonitor`는 우선 뽑기 기계의 원격 객체의 프록시를 가져온다. 그 후 `getState()`, `getCount()`, `getLocation()`을 호출한다.
 
 
 
@@ -226,6 +224,12 @@ class ImageProxy implements Icon {
 
 자바의 `java.lang.refelct` 패키지에는 프록시 기능이 내장되어있다. 이 패키지를 사용하면 즉석에서 하나 이상의 인터페이스를 구현하고, 지정한 클래스에 메소드 호출을 전달하는 프록시 클래스를 만들 수 있다. 진짜 프록시 클래스는 실행 중에 생성되므로 이러한 자바 기술을 **동적 프록시(dynamic proxy)**라고 부른다.
 
+> 🗣 종민 : Spring AOP - JDK dynamic proxy VS cglib
+>
+> - JDK dynamic proxy는 인터페이스가 필요하다.
+>
+> - CGLIB이 인터페이스가 아닌 경우에 대한 프록시를 만들어준다. 바이트코드 조작으로 생성해주고, 상속을 사용하기 때문에 대상 클래스가 final이면 안된다.
+
 
 
 > ![IMG_05E7B12D087E-1](images/IMG_05E7B12D087E-1.jpeg)
@@ -331,10 +335,6 @@ Person getOwnerProxy(Person person) {
 - **동기화 프록시 (Synchronization Proxy)**
 
   여러 스레드에서 주제에 접근할 때 안전하게 작업을 처리할 수 있게 해준다.
-
-  
-
-- **카운팅 프록시 (Counting Proxy)**
 
 
 

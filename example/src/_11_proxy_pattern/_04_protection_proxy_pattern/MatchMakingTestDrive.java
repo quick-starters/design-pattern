@@ -41,7 +41,6 @@ public class MatchMakingTestDrive {
 	}
 
 	Person getOwnerProxy(Person person) {
- 		
         return (Person) Proxy.newProxyInstance( 
             	person.getClass().getClassLoader(),
             	person.getClass().getInterfaces(),
